@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INVITE_404</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Space+Mono&display=swap');
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: #00FFCC;
+      font-family: 'Space Mono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .glitch {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      color: #00FFCC;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; transform: translateX(-1px); }
+      100% { opacity: 1; transform: translateX(1px); }
+    }
+
+    .invite-box {
+      border: 2px solid #00FFCC;
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      background-color: rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    .bg-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(45deg, rgba(0,255,204,0.05) 25%, transparent 25%, transparent 50%, rgba(0,255,204,0.05) 50%, rgba(0,255,204,0.05) 75%, transparent 75%, transparent);
+      background-size: 40px 40px;
+      animation: bgmove 8s linear infinite;
+    }
+
+    @keyframes bgmove {
+      from { background-position: 0 0; }
+      to { background-position: 40px 40px; }
+    }
+
+    @media (max-width: 600px) {
+      .glitch { font-size: 2rem; }
+      p { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-lines"></div>
+  <div class="invite-box">
+    <div class="glitch">INVITE_404</div>
+    <p>event: BDAY / real ones only</p>
+    <p>date: 10.07.2025</p>
+    <p>time: 6pm until shutdown</p>
+    <p>location: undisclosed (text me)</p>
+    <p>dresscode: black | chrome | errorcore</p>
+  </div>
+</body>
+</html>
